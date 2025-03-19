@@ -3,15 +3,8 @@ You need to use SQL built-in functions to gain insights relating to the duration
 */
 USE Sakila;
 -- 1.1 Determine the shortest and longest movie durations and name the values as max_duration and min_duration.
-SELECT title, length as max_length
-from film
-order by length desc
-limit 1;
-
-SELECT title, length as min_length
-from film
-order by length
-limit 1;
+SELECT MAX(length) AS max_duration, MIN(length) AS min_duration
+FROM film;
 
 -- 1.2. Express the average movie duration in hours and minutes. Don't use decimals.
 SELECT 
